@@ -1,14 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Kerala Car Rentals Loaded');
+    console.log('TriWow Website Loaded');
 
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
     if (menuToggle && navLinks) {
+        console.log('Menu elements found');
         menuToggle.addEventListener('click', () => {
+            console.log('Menu toggled');
             navLinks.classList.toggle('active');
         });
+    } else {
+        console.error('Menu elements NOT found');
     }
 
     // Smooth Scroll for anchor links (if any)
@@ -21,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     behavior: 'smooth'
                 });
                 // Close menu on click (mobile)
-                if (navLinks.classList.contains('active')) {
+                if (navLinks && navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
                 }
             }
