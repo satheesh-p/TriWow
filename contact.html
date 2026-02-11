@@ -57,7 +57,11 @@
             </div>
 
             <div class="contact-form-wrapper">
-                <form class="contact-form">
+                <form class="contact-form" action="https://formsubmit.co/vaisakhvv319@gmail.com" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - TriWow">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://triwowkochi.vercel.app/">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -75,6 +79,21 @@
                             <option value="city">Honda City</option>
                             <option value="luxury">Luxury / Commercial</option>
                         </select>
+                    </div>
+
+                    <div class="form-group row-group">
+                        <label for="start_date">Expected Start Date</label>
+                        <input type="date" id="start_date" name="start_date" required>
+                    </div>
+
+                    <div class="form-group row-group">
+                        <label for="end_date">Expected End Date</label>
+                        <input type="date" id="end_date" name="end_date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickup_time">Preferred Time (Optional)</label>
+                        <input type="time" id="pickup_time" name="pickup_time">
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
