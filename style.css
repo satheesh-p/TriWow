@@ -423,3 +423,125 @@ img {
         gap: 2rem;
     }
 }
+
+/* Top Bar */
+.top-bar {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    font-size: 0.875rem;
+    padding: 0.5rem 0;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Categories Section */
+.categories-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: var(--gray-100);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid #e2e8f0;
+    text-decoration: none;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-color);
+}
+
+.cat-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.category-card h3 {
+    font-size: 1.125rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* WhatsApp Float */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Pricing Table */
+.pricing-table {
+    margin-bottom: 1.5rem;
+    background-color: var(--gray-100);
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px dashed #cbd5e1;
+}
+
+.price-row:last-child {
+    border-bottom: none;
+}
+
+.price-val {
+    font-weight: 700;
+    color: var(--primary-color);
+}
