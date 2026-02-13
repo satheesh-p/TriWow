@@ -35,6 +35,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // Populate Car Dropdown if on contact page
+    const carSelect = document.getElementById('car');
+    if (carSelect) {
+        // Clear existing options except the first one
+        carSelect.innerHTML = '<option value="">Select a Car</option>';
+
+        cars.forEach(car => {
+            const option = document.createElement('option');
+            option.value = car.name;
+            option.textContent = car.name;
+            carSelect.appendChild(option);
+        });
+
+        // Pre-select car if URL parameter exists
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedCar = urlParams.get('car');
+        if (selectedCar) {
+            carSelect.value = selectedCar;
+        }
+    }
 });
 
 function renderCars(carsData, container) {
@@ -51,6 +71,7 @@ function renderCars(carsData, container) {
             <div class="car-image-placeholder">${car.image}</div>
             <div class="car-details">
                 <h3>${car.name}</h3>
+                <!--
                 <div class="pricing-table">
                     <div class="price-row">
                         <span>1-10 Days</span>
@@ -65,6 +86,7 @@ function renderCars(carsData, container) {
                         <span class="price-val">${car.prices['30+ Days']}</span>
                     </div>
                 </div>
+                -->
                 <ul class="car-features">
                     ${featuresHtml}
                 </ul>
