@@ -1,18 +1,22 @@
+import { cars } from './data/cars.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('TriWow Website Loaded');
+
+    // Render Cars if on fleet page
+    const carsGrid = document.getElementById('cars-grid');
+    if (carsGrid) {
+        renderCars(cars, carsGrid);
+    }
 
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
     if (menuToggle && navLinks) {
-        console.log('Menu elements found');
         menuToggle.addEventListener('click', () => {
-            console.log('Menu toggled');
             navLinks.classList.toggle('active');
         });
-    } else {
-        console.error('Menu elements NOT found');
     }
 
     // Smooth Scroll for anchor links (if any)
@@ -32,3 +36,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+function renderCars(carsData, container) {
+    container.innerHTML = ''; // Clear existing content
+
+    carsData.forEach(car => {
+        const carCard = document.createElement('div');
+        carCard.className = 'car-card';
+
+        // Features list HTML
+        const featuresHtml = car.features.map(f => `<li>${f}</li>`).join('');
+
+        carCard.innerHTML = `
+            <div class="car-image-placeholder">${car.image}</div>
+            <div class="car-details">
+                <h3>${car.name}</h3>
+                <div class="pricing-table">
+                    <div class="price-row">
+                        <span>1-10 Days</span>
+                        <span class="price-val">${car.prices['1-10 Days']}</span>
+                    </div>
+                    <div class="price-row">
+                        <span>11-29 Days</span>
+                        <span class="price-val">${car.prices['11-29 Days']}</span>
+                    </div>
+                    <div class="price-row">
+                        <span>30+ Days</span>
+                        <span class="price-val">${car.prices['30+ Days']}</span>
+                    </div>
+                </div>
+                <ul class="car-features">
+                    ${featuresHtml}
+                </ul>
+                <a href="contact.html?car=${encodeURIComponent(car.name)}" class="btn-primary full-width">Book Now</a>
+            </div>
+        `;
+
+        container.appendChild(carCard);
+    });
+}
