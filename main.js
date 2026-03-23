@@ -68,7 +68,9 @@ function renderCars(carsData, container) {
         const featuresHtml = car.features.map(f => `<li>${f}</li>`).join('');
 
         carCard.innerHTML = `
-            <div class="car-image-placeholder">${car.image}</div>
+            <div class="car-image-container">
+                <img src="${car.image}" alt="${car.name}" class="car-image" loading="lazy">
+            </div>
             <div class="car-details">
                 <h3>${car.name}</h3>
                 <!--
