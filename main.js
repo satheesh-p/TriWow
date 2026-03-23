@@ -6,7 +6,45 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render Cars if on fleet page
     const carsGrid = document.getElementById('cars-grid');
     if (carsGrid) {
-        renderCars(cars, carsGrid);
+        // Tab switching logic
+        const tabBtns = document.querySelectorAll('.tab-btn');
+
+        const filterFleet = (type) => {
+            if (type === 'bike') {
+                carsGrid.innerHTML = `
+                    <div class="coming-soon">
+                        <i class="fas fa-motorcycle"></i>
+                        <h2>Bikes Coming Soon!</h2>
+                        <p>We are expanding our fleet to include premium motorcycles. Stay tuned!</p>
+                    </div>
+                `;
+                return;
+            }
+            const filtered = cars.filter(item => item.type === type);
+            renderCars(filtered, carsGrid);
+        };
+
+        // Check URL for type (e.g., ?type=bike)
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlType = urlParams.get('type') || 'car';
+
+        // Default initial render
+        filterFleet(urlType);
+
+        // Update active tab button based on URL
+        tabBtns.forEach(btn => {
+            if (btn.getAttribute('data-type') === urlType) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                filterFleet(btn.getAttribute('data-type'));
+            });
+        });
     }
 
     // Mobile Menu Toggle
