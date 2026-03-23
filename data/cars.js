@@ -171,43 +171,43 @@ export const cars = [
         features: ["5 Seater", "Petrol", "Automatic"]
     },
     // Bikes
-    {
-        id: 14,
-        name: "Royal Enfield Classic 350",
-        type: "bike",
-        category: "Cruiser",
-        image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500&auto=format&fit=crop",
-        prices: {
-            "1-10 Days": "₹800",
-            "11-29 Days": "₹700",
-            "30+ Days": "₹600"
-        },
-        features: ["350cc", "Single Channel ABS", "Comfortable"]
-    },
-    {
-        id: 15,
-        name: "Yamaha MT-15",
-        type: "bike",
-        category: "Sports",
-        image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=500&auto=format&fit=crop",
-        prices: {
-            "1-10 Days": "₹700",
-            "11-29 Days": "₹600",
-            "30+ Days": "₹500"
-        },
-        features: ["155cc", "Liquid Cooled", "Slipper Clutch"]
-    },
-    {
-        id: 16,
-        name: "Honda Activa 6G",
-        type: "bike",
-        category: "Scooter",
-        image: "https://images.unsplash.com/photo-1594435753896-f0f9b6999238?w=500&auto=format&fit=crop",
-        prices: {
-            "1-10 Days": "₹400",
-            "11-29 Days": "₹350",
-            "30+ Days": "₹300"
-        },
-        features: ["110cc", "Automatic", "LED Headlamp"]
-    }
+    // {
+    //     id: 14,
+    //     name: "Royal Enfield Classic 350",
+    //     type: "bike",
+    //     category: "Cruiser",
+    //     image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500&auto=format&fit=crop",
+    //     prices: {
+    //         "1-10 Days": "₹800",
+    //         "11-29 Days": "₹700",
+    //         "30+ Days": "₹600"
+    //     },
+    //     features: ["350cc", "Single Channel ABS", "Comfortable"]
+    // },
+    // {
+    //     id: 15,
+    //     name: "Yamaha MT-15",
+    //     type: "bike",
+    //     category: "Sports",
+    //     image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=500&auto=format&fit=crop",
+    //     prices: {
+    //         "1-10 Days": "₹700",
+    //         "11-29 Days": "₹600",
+    //         "30+ Days": "₹500"
+    //     },
+    //     features: ["155cc", "Liquid Cooled", "Slipper Clutch"]
+    // },
+    // {
+    //     id: 16,
+    //     name: "Honda Activa 6G",
+    //     type: "bike",
+    //     category: "Scooter",
+    //     image: "https://images.unsplash.com/photo-1594435753896-f0f9b6999238?w=500&auto=format&fit=crop",
+    //     prices: {
+    //         "1-10 Days": "₹400",
+    //         "11-29 Days": "₹350",
+    //         "30+ Days": "₹300"
+    //     },
+    //     features: ["110cc", "Automatic", "LED Headlamp"]
+    // }
 ];

@@ -405,6 +405,15 @@ img {
     border-radius: 12px;
 }
 
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -529,6 +538,11 @@ img {
 
     .govt-approved {
         font-size: 0.72rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
     }
 }
 
